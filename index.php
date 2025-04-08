@@ -25,7 +25,7 @@ try {
 
     echo "Nouvel utilisateur inséré avec l'ID : " . $pdo->lastInsertId() . "</br>/br>";
 
-    print ("EXERCICE 1</br></br>");
+    print ("EXERCICE 2</br></br>");
     echo "Utilisateurs de plus de 30 ans :</br>";
 
     $sql = "SELECT * FROM utilisateurs WHERE age > 30";
@@ -35,4 +35,23 @@ try {
     foreach ($utilisateurs as $user) {
         echo "Nom : " . $user['nom'] . " | Age : " . $user['age'] . "</br>";
     }
+
+    echo "</br>";
+
+    print ("EXERCICE 3</br></br>");
+    $sql = "UPDATE utilisateurs SET age = ? WHERE id = ?";
+    $stmt = $pdo_>prepare($sql);
+    $stmt_>execute([40, 1]);
+
+    echo "Nombre d'utilisateurs mis à jour : " . $stmt->rowCount() . "</br></br>";
+
+    print ("EXERCICE 4</br></br>");
+    $sql = "DELETE FROM utilisateurs WHERE id = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt_>execute([1]);
+
+    echo "Nombre d'utilisateurs supprimés : " . $stmt->rowCount() . "</br></br>";
+
+} catch (PDOException $e) {
+    echo "Erreur de connexion à la base de données : " . $e->getMessage();
 }
