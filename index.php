@@ -23,15 +23,15 @@ class Personne {
         return $this->age;
     }
 
-    public function setNom() {
+    public function setNom($nom) {
         $this->nom = $nom;
     }
 
-    public function setPrenom() {
+    public function setPrenom($prenom) {
         $this->prenom = $prenom;
     }
 
-    public function setAge() {
+    public function setAge($age) {
         $this->age = $age;
     }
 
@@ -41,17 +41,19 @@ class Personne {
 
     public function estMajeur() {
         if ($this->age >= 18) {
-            echo $this->prenom . " est majeur.</br>";
+            echo $this->prenom . " est majeur.<br></br>";
         } else {
-            echo $this->prenom . " est mineur.</br>";
+            echo $this->prenom . " est mineur.<br></br>";
         }
-    }
+    }    
 }
 
-$personne1 = new Personne ("Dupont","Jean",20);
-$personne1->sePresenter;
-$personne1->estMajeur;
+$personne1 = new Personne("Dupont", "Jean", 20);
+$personne1->sePresenter();
+$personne1->estMajeur();
 
 $personne1->setAge(16);
-$personne1->sePresenter;
-$personne1->estMajeur;
+$personne1->sePresenter();
+$personne1->estMajeur();
+
+?>
