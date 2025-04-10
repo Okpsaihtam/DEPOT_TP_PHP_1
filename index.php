@@ -6,7 +6,7 @@ $username = "root";
 $password = "";
 $charset = "utf8mb4";
 
-$dsn = "mysql:host=$host;dbnale=$dbname;charset=$charset";
+$dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
 
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -23,7 +23,7 @@ try {
     $stmt = $pdo->prepare($sql);
     $stmt->execute(["Durand", 35]);
 
-    echo "Nouvel utilisateur inséré avec l'ID : " . $pdo->lastInsertId() . "</br>/br>";
+    echo "Nouvel utilisateur inséré avec l'ID : " . $pdo->lastInsertId() . "</br></br>";
 
     print ("EXERCICE 2</br></br>");
     echo "Utilisateurs de plus de 30 ans :</br>";
@@ -40,15 +40,15 @@ try {
 
     print ("EXERCICE 3</br></br>");
     $sql = "UPDATE utilisateurs SET age = ? WHERE id = ?";
-    $stmt = $pdo_>prepare($sql);
-    $stmt_>execute([40, 1]);
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([40, 1]);
 
     echo "Nombre d'utilisateurs mis à jour : " . $stmt->rowCount() . "</br></br>";
 
     print ("EXERCICE 4</br></br>");
     $sql = "DELETE FROM utilisateurs WHERE id = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt_>execute([1]);
+    $stmt->execute([1]);
 
     echo "Nombre d'utilisateurs supprimés : " . $stmt->rowCount() . "</br></br>";
 
