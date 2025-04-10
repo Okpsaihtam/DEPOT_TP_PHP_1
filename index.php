@@ -67,3 +67,4 @@ echo $moto->demarrer() . "</br>";
 echo $moto->cabrer() . "</br>";
 
 ?>
+
