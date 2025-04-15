@@ -11,7 +11,7 @@ class Vehicule {
     }
     
     public function getInfos() {
-        return "Marque : {$this->marque}, Modèle : {$this->modele}, Année : {$this->annee}";
+        return "Marque : {$this->marque} <br> Modèle : {$this->modele} <br> Année : {$this->annee}";
     }
     
     public function demarrer() {
@@ -31,7 +31,7 @@ class Voiture extends Vehicule {
     
     public function getInfos() {
         $infosParent = parent::getInfos();
-        return $infosParent . ", Portes : {$this->nombrePortes}, Carburant : {$this->typeCarburant}";
+        return $infosParent . "<br> Portes : {$this->nombrePortes} <br> Carburant : {$this->typeCarburant}";
     }
     
     public function klaxonner() {
@@ -79,6 +79,6 @@ echo $voiture2->klaxonner() . "</br>";
 echo "<br>";
 
 $moto2 = new Moto("Kawasaki", "Ninja", 2025, 998);
-echo $moto->getInfos() . "<br>";
-echo $moto->demarrer() . "<br>";
-echo $moto->faireRugir() . "<br>";
+echo $moto2->getInfos() . "<br>";
+echo $moto2->demarrer() . "<br>";
+echo $moto2->faireRugir() . "<br>";
