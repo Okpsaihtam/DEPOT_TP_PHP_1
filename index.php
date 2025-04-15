@@ -52,8 +52,17 @@ $personne1 = new Personne("Dupont", "Jean", 20);
 $personne1->sePresenter();
 $personne1->estMajeur();
 
+echo "<br>";
+
 $personne1->setAge(16);
 $personne1->sePresenter();
 $personne1->estMajeur();
 
+echo "<br>";
+
+$personne1->setAge(24);
+$personne1->setNom("Elfie");
+$personne1->setPrenom("Eva");
+$personne1->sePresenter();
+$personne1->estMajeur();
 ?>
