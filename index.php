@@ -53,7 +53,7 @@ class Moto extends Vehicule {
     }
 
     public function faireRugir() {
-        return "La moto rugit : arrrrrrrrrrrrrah !";
+        return "La moto rugit : Youhou les policiers j'ai pas le permis !";
     }
 }
 
@@ -75,3 +75,10 @@ $voiture2 = new Voiture("Lamborghini", "Aventador", 2024, 5, "Essence");
 echo $voiture2->getInfos() . "</br>";
 echo $voiture2->demarrer() . "</br>";
 echo $voiture2->klaxonner() . "</br>";
+
+echo "<br>";
+
+$moto2 = new Moto("Kawasaki", "Ninja", 2025, 998);
+echo $moto->getInfos() . "<br>";
+echo $moto->demarrer() . "<br>";
+echo $moto->faireRugir() . "<br>";
